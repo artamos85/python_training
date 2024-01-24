@@ -33,7 +33,3 @@ class Contact:
         self.address2 = address2
         self.phone2 = phone2
         self.notes = notes
-
-contact = Contact(firstname=1, middlename=2, lastname=3, nickname=4, title=6, company=7)
-for key, value in vars(contact).items():
-    print(key, value)
