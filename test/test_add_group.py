@@ -14,13 +14,13 @@ def app(request):
 def test_add_group(app):
     group = Group("qwer", "qwer", "qwer")
     app.session.login("admin", "secret")
-    app.create_group(group)
+    app.group.create(group)
     app.session.logout()
 
 
 def test_add_empty_group(app):
     app.session.login("admin", "secret")
-    app.create_group(Group("", "", ""))
+    app.group.create(Group("", "", ""))
     app.session.logout()
 
 
@@ -33,5 +33,5 @@ def test_add_contact(app):
                       aday=19, amonth=20, ayear=21, address2=22,
                       phone2=23, notes='wheepeee!')
     app.session.login("admin", "secret")
-    app.create_contact(contact)
+    app.contact.create(contact)
     app.session.logout()
