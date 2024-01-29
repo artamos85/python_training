@@ -7,21 +7,21 @@ from model.contact import Contact
 @pytest.fixture
 def app(request):
     fixture = Application()
-    request.addfinalizer:(fixture.destroy)
+    request.addfinalizer(fixture.destroy)
     return fixture
 
 
 def test_add_group(app):
     group = Group("qwer", "qwer", "qwer")
-    app.login("admin", "secret")
+    app.session.login("admin", "secret")
     app.create_group(group)
-    app.logout()
+    app.session.logout()
 
 
 def test_add_empty_group(app):
-    app.login("admin", "secret")
+    app.session.login("admin", "secret")
     app.create_group(Group("", "", ""))
-    app.logout()
+    app.session.logout()
 
 
 def test_add_contact(app):
@@ -32,6 +32,6 @@ def test_add_contact(app):
                       homepage=15, bday=16, bmonth=17, byear=18,
                       aday=19, amonth=20, ayear=21, address2=22,
                       phone2=23, notes='wheepeee!')
-    app.login("admin", "secret")
+    app.session.login("admin", "secret")
     app.create_contact(contact)
-    app.logout()
+    app.session.logout()
