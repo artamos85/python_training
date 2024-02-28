@@ -9,6 +9,6 @@ def test_edit_first_contact(app):
                       homepage='new15', bday='new16', bmonth='new17', byear='new18',
                       aday='new19', amonth='new20', ayear='new21', address2='new22',
                       phone2='new23', notes='wheepeee!wheepeee!')
-    app.session.login("admin", "secret")
+    app.session.login('admin', 'secret')
     app.contact.edit_first(contact)
     app.session.logout()

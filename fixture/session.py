@@ -10,11 +10,11 @@ class SessionHelper:
         app = self.app
         wd = app.wd
         app.open_home_page()
-        wd.find_element(By.NAME, "user").send_keys(user)
-        wd.find_element(By.NAME, "pass").send_keys(password)
-        wd.find_element(By.NAME, "pass").send_keys(Keys.ENTER)
+        wd.find_element(By.NAME, 'user').send_keys(user)
+        wd.find_element(By.NAME, 'pass').send_keys(password)
+        wd.find_element(By.NAME, 'pass').send_keys(Keys.ENTER)
 
     def logout(self):
         app = self.app
         wd = app.wd
-        wd.find_element(By.LINK_TEXT, "Logout").click()
+        wd.find_element(By.LINK_TEXT, 'Logout').click()

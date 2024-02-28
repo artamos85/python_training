@@ -9,6 +9,6 @@ def test_add_contact(app):
                       homepage=15, bday=16, bmonth=17, byear=18,
                       aday=19, amonth=20, ayear=21, address2=22,
                       phone2=23, notes='wheepeee!')
-    app.session.login("admin", "secret")
+    app.session.login('admin', 'secret')
     app.contact.create(contact)
     app.session.logout()
